@@ -1,0 +1,31 @@
+
+<svg 
+         id="arena" viewBox="-5, -5, 110, 160"
+         style="max-height: 100%;">
+         
+    <polygon points="0,0 0,150 100,150 100,0" stroke="black" fill="none" stroke-width=".2" />
+
+    <circle cx="0" cy="0" r="1" fill="red" />
+    <circle cx="100" cy="0" r="1" fill="red" />
+    <circle cx="0" cy="150" r="1" fill="red" />
+    <circle cx="100" cy="150" r="1" fill="red" />
+    <circle cx="0" cy="30" r="2" fill="red" />
+    <circle cx="100" cy="30" r="2" fill="red" />
+    <circle cx="0" cy="120" r="2" fill="red" />
+    <circle cx="100" cy="120" r="2" fill="red" />
+    <circle cx="0" cy="75" r="2" fill="red" />
+    <circle cx="100" cy="75" r="2" fill="red" />
+    <line x1="0" y1="30" x2="100" y2="30" stroke="black" stroke-width="0.2" stroke-dasharray="5,5"/>
+    <line x1="0" y1="120" x2="100" y2="120" stroke="black" stroke-width="0.2" stroke-dasharray="5,5"/>
+    
+    <polygon points="-5,-1.5 2,-1.5 2,-3 5,0 2,3 2,1.5 -5,1.5"
+            fill="red"
+            v-bind:transform="'translate('+x+','+y+') rotate('+angle+',0,0)'"/>
+    <polygon points="-5,-1.5 2,-1.5 2,-3 5,0 2,3 2,1.5 -5,1.5"
+            fill="grey"
+            v-bind:transform="'translate('+tx+','+ty+') rotate('+tAngle+',0,0)'" />
+
+    <path v-bind:d="arc" fill="none" stroke="black" 
+          stroke-width="0.2" stroke-dasharray="2,2" />
+    
+    </svg>
