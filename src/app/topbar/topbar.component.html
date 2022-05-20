@@ -1,0 +1,12 @@
+<header>
+    <a routerLink="/">
+      <span class="app-title">BlackberryBirch Equestrian Drill Editor</span>
+    </a>
+  <button mat-raised-button class="login-button" (click)="login()">
+    <mat-icon>{{ loginService.isLoggedIn ? 'logout' : 'login' }}</mat-icon>
+    <ng-container *ngIf="loginService.isLoggedIn"> Logout </ng-container>
+    <ng-container *ngIf="!loginService.isLoggedIn"> Login </ng-container>
+    <ng-container>{{ loginService.displayName }}</ng-container>
+  </button>
+
+</header>

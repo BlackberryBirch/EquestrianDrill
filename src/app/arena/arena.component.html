@@ -1,7 +1,8 @@
 
 <svg 
          id="arena" viewBox="-5, -5, 110, 160"
-         style="max-height: 100%;">
+         style="max-height: 100%;" [ngClass]="{'arena-selected' : selected}"
+         (mouseup)="mouseUp()" (mousemove)="mouseMove($event)">
          
     <polygon points="0,0 0,150 100,150 100,0" stroke="black" fill="none" stroke-width=".2" />
 
@@ -20,12 +21,13 @@
     
     <polygon points="-5,-1.5 2,-1.5 2,-3 5,0 2,3 2,1.5 -5,1.5"
             fill="red"
-            v-bind:transform="'translate('+x+','+y+') rotate('+angle+',0,0)'"/>
+            [attr.transform]="'translate('+x+','+y+') rotate('+angle+',0,0)'"/>
     <polygon points="-5,-1.5 2,-1.5 2,-3 5,0 2,3 2,1.5 -5,1.5"
             fill="grey"
-            v-bind:transform="'translate('+tx+','+ty+') rotate('+tAngle+',0,0)'" />
+            [attr.transform]="'translate('+tx+','+ty+') rotate('+tAngle+',0,0)'" 
+            (mousedown)="mouseDown($event)"/>
 
-    <path v-bind:d="arc" fill="none" stroke="black" 
+    <path [attr.d]="arc" fill="none" stroke="black" 
           stroke-width="0.2" stroke-dasharray="2,2" />
     
     </svg>

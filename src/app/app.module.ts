@@ -12,12 +12,16 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from "@angular/fire/compat/auth";
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import {environment} from '../environments/environment';
+import { TopbarComponent } from './topbar/topbar.component';
+import { LoginComponent } from './login/login.component';
+import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
-  signInFlow: 'popup',
+  signInFlow: 'redirect',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    {
+    /*{
       scopes: [
         'public_profile',
         'email',
@@ -36,8 +40,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
     },
     firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-    firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+    firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID */
   ],
+  immediateFederatedRedirect: false,
   tosUrl: '<your-tos-link>',
   privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
   credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
@@ -49,7 +54,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     ArenaComponent,
     FrameComponent,
     FilmstripComponent,
-    EditorComponent
+    EditorComponent,
+    TopbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +64,12 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    FlexLayoutModule
+    FlexLayoutModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
-  providers: [ {provide: USE_AUTH_EMULATOR, useValue: !environment.production ? ['localhost', 9099] : undefined} ],
+  //providers: [ {provide: USE_AUTH_EMULATOR, useValue: !environment.production ? ['localhost', 9099] : undefined} ],
+  providers: [ {provide: USE_AUTH_EMULATOR, useValue: undefined} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

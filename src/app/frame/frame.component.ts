@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-frame',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./frame.component.scss']
 })
 export class FrameComponent implements OnInit {
-
+  @Input() selected=false;
   constructor() { }
 
   ngOnInit(): void {
