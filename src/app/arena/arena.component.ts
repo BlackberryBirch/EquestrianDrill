@@ -17,7 +17,7 @@ export class ArenaComponent implements OnInit {
   @Input() selected=false;
   x = 10;
   y = 90;
-  angle = 235;
+  angle = 225;
   tx = 10;
   ty = 60;
   tAngle = 315;
