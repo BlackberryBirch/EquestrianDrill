@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { LoginService } from '../services/login.service';
 
@@ -10,7 +9,9 @@ import { LoginService } from '../services/login.service';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, public loginService: LoginService) { }
+  constructor(
+    public loginService: LoginService    
+    ) { }
 
   ngOnInit(): void {
     this.loginService.login();

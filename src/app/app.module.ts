@@ -14,7 +14,6 @@ import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import {environment} from '../environments/environment';
 import { TopbarComponent } from './topbar/topbar.component';
 import { LoginComponent } from './login/login.component';
-import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -65,7 +64,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     FlexLayoutModule,
-    MaterialModule,
     BrowserAnimationsModule
   ],
   //providers: [ {provide: USE_AUTH_EMULATOR, useValue: !environment.production ? ['localhost', 9099] : undefined} ],

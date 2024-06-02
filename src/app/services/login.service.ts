@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {firebase, firebaseui, FirebaseuiAngularLibraryService, FirebaseUIModule} from 'firebaseui-angular';
 import { LoginComponent } from '../login/login.component';
 
@@ -12,21 +11,20 @@ export class LoginService {
   isLoggedIn=false;
   uid="";
   displayName="";
-  dialogRef:MatDialogRef<LoginComponent>|null=null;
 
   constructor(private firebaseuiAngularLibraryService: FirebaseuiAngularLibraryService,
-              private angularFireAuth: AngularFireAuth,
-              private dialog: MatDialog) { 
+              private angularFireAuth: AngularFireAuth) { 
     this.angularFireAuth.authState.subscribe(res => {
       if (res) {
         this.isLoggedIn=true;
         this.uid = res.uid;
         this.displayName = res.displayName ?? "";
         console.log(JSON.stringify(res));
+        /*
         if (this.dialogRef) {
           this.dialogRef.close();
           this.dialogRef=null;
-        }
+        }*/
       } else {
         this.isLoggedIn=false;
         this.uid="";
@@ -36,7 +34,7 @@ export class LoginService {
     });
   }
 
-  login(): void {
+  login(): void { /*
     if (!this.dialogRef) {
       this.loginAttempted=true;
       if (!this.isLoggedIn) {
@@ -44,7 +42,7 @@ export class LoginService {
           //width: '250px'
         });
       }
-    }
+    }*/
   }
 
   logout() {

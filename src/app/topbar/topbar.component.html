@@ -1,12 +1,11 @@
-<header>
-    <a routerLink="/">
-      <span class="app-title">BlackberryBirch Equestrian Drill Editor</span>
-    </a>
-  <button mat-raised-button class="login-button" (click)="login()">
-    <mat-icon>{{ loginService.isLoggedIn ? 'logout' : 'login' }}</mat-icon>
-    <ng-container *ngIf="loginService.isLoggedIn"> Logout </ng-container>
-    <ng-container *ngIf="!loginService.isLoggedIn"> Login </ng-container>
-    <ng-container>{{ loginService.displayName }}</ng-container>
-  </button>
-
+<header fxLayout="row">
+      <p fxFlex="grow">BlackberryBirch Equestrian Drill Editor</p>
+      <button fxFlex="30" class="btn btn-primary login-button" (click)="login()">
+        <span [ngClass]="loginService.isLoggedIn ? 'bi bi-door-closed' : 'bi-door-open'"></span>
+        <span>
+          <ng-container *ngIf="loginService.isLoggedIn"> Logout </ng-container>
+          <ng-container *ngIf="!loginService.isLoggedIn"> Login </ng-container>
+          <ng-container>{{ loginService.displayName }}</ng-container>
+        </span>
+      </button>
 </header>
