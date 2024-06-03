@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 import { FirebaseUISignInFailure, FirebaseUISignInSuccessWithAuthResult } from 'firebaseui-angular';
 
 @Component({
@@ -9,18 +8,18 @@ import { FirebaseUISignInFailure, FirebaseUISignInSuccessWithAuthResult } from '
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<LoginComponent>) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   successCallback(signInSuccessData: FirebaseUISignInSuccessWithAuthResult) {
-    this.dialogRef.close();
+    //this.dialogRef.close();
     console.log("success");
   }
 
   errorCallback(errorData: FirebaseUISignInFailure) {
-    this.dialogRef.close();
+    //this.dialogRef.close();
     console.log("failure");
   }
 }

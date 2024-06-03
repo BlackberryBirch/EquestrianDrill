@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "EquestrianDrill:build:production"
+              "buildTarget": "EquestrianDrill:build:production"
             },
             "development": {
-              "browserTarget": "EquestrianDrill:build:development"
+              "buildTarget": "EquestrianDrill:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "EquestrianDrill:build"
+            "buildTarget": "EquestrianDrill:build"
           }
         },
         "test": {
