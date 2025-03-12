@@ -1,6 +1,18 @@
 # EquestrianDrill
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+
+## Dependencies
+To get started, install Node.js and npm.
+
+I recommend starting with NVM:
+Windows: https://github.com/coreybutler/nvm-windows
+
+```
+nvm install 20.18.3
+nvm use 20.18.3
+npm install
+npm install -g @angular/cli@17
+```
 
 ## Development server
 
