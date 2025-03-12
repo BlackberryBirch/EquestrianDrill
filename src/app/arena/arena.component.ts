@@ -9,9 +9,10 @@ type Vector = {
   distance: number;
 }
 @Component({
-  selector: 'app-arena',
-  templateUrl: './arena.component.html',
-  styleUrls: ['./arena.component.scss']
+    selector: 'app-arena',
+    templateUrl: './arena.component.html',
+    styleUrls: ['./arena.component.scss'],
+    standalone: false
 })
 export class ArenaComponent implements OnInit {
   @Input() selected=false;

@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
-@import '~firebaseui/dist/firebaseui.css';
-@import '~@angular/material/prebuilt-themes/purple-green.css';
+@import 'firebaseui/dist/firebaseui.css';
+@import '@angular/material/prebuilt-themes/purple-green.css';
 
 @include mat.core();
 
