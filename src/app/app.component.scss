@@ -1,0 +1,32 @@
+.parent {
+    display: grid;
+    gap: 0;
+    height: 100%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 20% 1fr;
+}
+
+.topbar {
+    background-color: gray;
+    grid-row: row;
+    grid-column: span 2;
+}
+
+
+.field {
+    grid-row: row 2;
+    grid-column: 2/3;
+    max-height: 82vh;
+}
+
+.properties {
+    background-color: gray;
+    grid-row: row 2;
+    grid-column: 1/2;
+}
+
+.filmstrip {
+    background-color: lightgray;
+    grid-row: row 3;
+    grid-column: span 2;
+}

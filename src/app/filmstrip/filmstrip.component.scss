@@ -1,0 +1,9 @@
+.filmstrip {
+    display: flex;
+    overflow-x:scroll;
+    white-space: nowrap;
+}
+
+.filmstrip-cell {
+    height: 10vh;
+}

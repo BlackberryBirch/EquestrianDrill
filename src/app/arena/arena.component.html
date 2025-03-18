@@ -1,8 +1,9 @@
 
 <svg 
-         id="arena" viewBox="-5, -5, 110, 160"
-         style="max-height: 100%;" [ngClass]="{'arena-selected' : selected}"
-         (mouseup)="mouseUp()" (mousemove)="mouseMove($event)">
+        id="arena" viewBox="-5, -5, 110, 160"
+        height="100%"
+        [ngClass]="{'arena-selected' : selected}"
+        (mouseup)="mouseUp()" (mousemove)="mouseMove($event)">
          
     <polygon points="0,0 0,150 100,150 100,0" stroke="black" fill="none" stroke-width=".2" />
 

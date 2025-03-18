@@ -1,3 +1,12 @@
 .arena-selected {
     background-color: blue;
 }
+
+#arena {
+    display: block;
+}
+
+:host {
+    display: block;
+    height: 100%;
+}

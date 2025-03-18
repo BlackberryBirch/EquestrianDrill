@@ -7,7 +7,6 @@ import { ArenaComponent } from './arena/arena.component';
 import { FrameComponent } from './frame/frame.component';
 import { FilmstripComponent } from './filmstrip/filmstrip.component';
 import { EditorComponent } from './editor/editor.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from "@angular/fire/compat/auth";
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
@@ -63,7 +62,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    FlexLayoutModule,
     BrowserAnimationsModule
   ],
   //providers: [ {provide: USE_AUTH_EMULATOR, useValue: !environment.production ? ['localhost', 9099] : undefined} ],
