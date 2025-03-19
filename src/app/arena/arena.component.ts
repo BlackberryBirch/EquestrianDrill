@@ -12,6 +12,7 @@ export class ArenaComponent implements OnInit {
     @Output() select = new EventEmitter<ArenaComponent>();
     @Input() selected = false;
     @Input() readonly = false;
+    @Input() pathTrails = false;
 
     x = 10;
     y = 90;
@@ -30,17 +31,6 @@ export class ArenaComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    updateTarget(mouseX: number, mouseY: number) {
-        let movePointAngle = calculateArcMove(
-            new Point(this.x, this.y),
-            this.angle,
-            new Point(mouseX, mouseY)
-        )
-        this.tx = movePointAngle[0].x
-        this.ty = movePointAngle[0].y
-        this.tAngle = movePointAngle[1]
-    }
-
     mouseDown(e: MouseEvent) {
         if (!this.readonly) {
             this.dragging = true;
@@ -53,20 +43,23 @@ export class ArenaComponent implements OnInit {
         if (this.dragging) {
             let svg = this.dragTarget.ownerSVGElement;
             let ctm = svg.getScreenCTM();
-            let mouseX = (e.clientX - ctm.e) / ctm.a;
-            let mouseY = (e.clientY - ctm.f) / ctm.d;
-
-            this.updateTarget(mouseX, mouseY);
-            this.arc = calculateArc(this.angle, 
-                new Point(this.tx, this.ty),
-                new Point(this.x, this.y)
-            );
+            this.tx = (e.clientX - ctm.e) / ctm.a;
+            this.ty = (e.clientY - ctm.f) / ctm.d;
         }
     }
     mouseUp() {
         this.dragging = false;
         this.dragX = NaN;
         this.dragY = NaN;
+    }
+    keyDown(e: KeyboardEvent) {
+        let offset = e.ctrlKey ? 7.5 : 22.5
+        if (e.key == '[') {
+            this.tAngle = (Math.round(this.tAngle / offset) - 1) * offset;
+        }
+        if (e.key == ']') {
+            this.tAngle = (Math.round(this.tAngle / offset) + 1) * offset;
+        }
     }
 }
 /*
