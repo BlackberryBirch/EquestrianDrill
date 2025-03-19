@@ -109,10 +109,12 @@ export class ArenaComponent implements OnInit {
     }
 
     mouseDown(e: MouseEvent) {
-        this.dragging = true;
-        this.dragX = this.x;
-        this.dragY = this.y;
-        this.dragTarget = e.target;
+        if (!this.readonly) {
+            this.dragging = true;
+            this.dragX = this.x;
+            this.dragY = this.y;
+            this.dragTarget = e.target;
+        }
     };
     mouseMove(e: MouseEvent) {
         if (this.dragging) {
