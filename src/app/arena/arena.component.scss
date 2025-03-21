@@ -1,9 +1,11 @@
-.arena-selected {
-    background-color: blue;
-}
 
 #arena {
     display: block;
+    background-color: white;
+}
+
+#arena.arena-selected {
+    background-color: lightblue;
 }
 
 :host {

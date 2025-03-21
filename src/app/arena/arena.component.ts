@@ -53,12 +53,13 @@ export class ArenaComponent implements OnInit {
         this.dragY = NaN;
     }
     keyDown(e: KeyboardEvent) {
-        let offset = e.ctrlKey ? 7.5 : 22.5
+        let offset = e.ctrlKey ? 7.5 : 22.5;
+        let newAngle = Math.round(this.tAngle / offset) * offset;
         if (e.key == '[') {
-            this.tAngle = (Math.round(this.tAngle / offset) - 1) * offset;
+            this.tAngle = newAngle < this.tAngle ? newAngle : newAngle - offset;
         }
         if (e.key == ']') {
-            this.tAngle = (Math.round(this.tAngle / offset) + 1) * offset;
+            this.tAngle = newAngle > this.tAngle ? newAngle : newAngle + offset;
         }
     }
 }
