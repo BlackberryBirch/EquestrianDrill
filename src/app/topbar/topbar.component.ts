@@ -5,8 +5,7 @@ import { LoginService } from '../services/login.service';
 @Component({
     selector: 'app-topbar',
     templateUrl: './topbar.component.html',
-    styleUrls: ['./topbar.component.scss'],
-    standalone: false
+    styleUrls: ['./topbar.component.scss']
 })
 export class TopbarComponent implements OnInit {
 

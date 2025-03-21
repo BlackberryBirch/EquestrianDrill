@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Point } from './point';
 import { calculateArc, calculateArcMove } from './arc';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-arena',
     templateUrl: './arena.component.html',
     styleUrls: ['./arena.component.scss'],
-    standalone: false
+    imports: [NgClass, NgIf]
 })
 export class ArenaComponent implements OnInit {
     @Output() select = new EventEmitter<ArenaComponent>();

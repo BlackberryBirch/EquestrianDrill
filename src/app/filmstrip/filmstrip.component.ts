@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FrameComponent } from '../frame/frame.component';
 
 @Component({
     selector: 'app-filmstrip',
     templateUrl: './filmstrip.component.html',
     styleUrls: ['./filmstrip.component.scss'],
-    standalone: false
+    imports: [FrameComponent]
 })
 export class FilmstripComponent implements OnInit {
 
