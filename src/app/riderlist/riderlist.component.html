@@ -1,1 +1,11 @@
-<p>riderlist works!</p>
+<button mat-mini-fab>
++
+</button>
+<button mat-mini-fab>
+-
+</button>
+<mat-list>
+@for (rider of riders; track rider) {
+    <mat-list-item class="rider">{{rider}}</mat-list-item>
+}
+</mat-list>

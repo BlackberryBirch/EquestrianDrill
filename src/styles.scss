@@ -1,15 +1,22 @@
 @use '@angular/material' as mat;
-@import 'firebaseui/dist/firebaseui.css';
 @import '@angular/material/prebuilt-themes/purple-green.css';
 
-@include mat.elevation-classes();
-@include mat.app-background();
 
 /* You can add global styles to this file, and also import other style files */
 html {
     display: grid;
     height: 100%;
+    color-scheme: dark;
+    @include mat.theme((
+        color: mat.$blue-palette,
+        typography: Roboto,
+        density: 0
+    ));
 }
+
 body {
+    height: 100%;
     margin: 0px;
+    background: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
 }

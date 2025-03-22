@@ -6,15 +6,14 @@ import { USE_EMULATOR as USE_AUTH_EMULATOR, AngularFireAuthModule } from '@angul
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { AppRoutingModule } from './app/app-routing.module';
 import { AngularFireModule } from '@angular/fire/compat';
-import { FirebaseUIModule, firebaseui, firebase } from 'firebaseui-angular';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { AppComponent } from './app/app.component';
-
+/*
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'redirect',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    /*{
+    {
       scopes: [
         'public_profile',
         'email',
@@ -33,14 +32,14 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
     },
     firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-    firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID */
+    firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID 
   ],
   immediateFederatedRedirect: false,
   tosUrl: '<your-tos-link>',
   privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
   credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
 };
-
+*/
 
 
 if (environment.production) {
@@ -48,10 +47,10 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-    providers: [
-        importProvidersFrom(BrowserModule, AppRoutingModule, AngularFireModule.initializeApp(environment.firebase), AngularFireAuthModule, FirebaseUIModule.forRoot(firebaseUiAuthConfig)),
-        { provide: USE_AUTH_EMULATOR, useValue: undefined },
-        provideAnimations()
-    ]
+  providers: [
+    importProvidersFrom(BrowserModule, AppRoutingModule, AngularFireModule.initializeApp(environment.firebase), AngularFireAuthModule),
+    { provide: USE_AUTH_EMULATOR, useValue: undefined },
+    provideAnimations()
+  ]
 })
   .catch(err => console.error(err));

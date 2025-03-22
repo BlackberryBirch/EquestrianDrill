@@ -1,27 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
-import { LoginService } from '../services/login.service';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
     selector: 'app-topbar',
     templateUrl: './topbar.component.html',
-    styleUrls: ['./topbar.component.scss']
+    styleUrls: ['./topbar.component.scss'],
+    imports: [MatToolbarModule]
 })
 export class TopbarComponent implements OnInit {
 
   constructor(
-    public loginService: LoginService    
     ) { }
 
   ngOnInit(): void {
-    this.loginService.login();
+    //this.loginService.login();
   }
 
-  login(): void {
+  login(): void {/*
     if (this.loginService.isLoggedIn) {
       this.loginService.logout();
     } else {
       this.loginService.login();
-    }
+    }*/
   }
 }
